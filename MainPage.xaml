@@ -8,7 +8,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="anger.png"
+                Source="icon.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
@@ -19,7 +19,7 @@
                 SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
 
             <Label
-                Text="Press the button to log in"
+                Text="Press the button to add or "
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
