@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Camera.MAUI;
+using Microsoft.Extensions.Logging;
 
 namespace KTI_Testing__Mobile_
 {
@@ -9,6 +10,7 @@ namespace KTI_Testing__Mobile_
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCameraView()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -16,7 +18,7 @@ namespace KTI_Testing__Mobile_
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

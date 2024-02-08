@@ -1,4 +1,8 @@
-﻿namespace KTI_Testing__Mobile_
+﻿using KTI_Testing__Mobile_.pages;
+using Camera.MAUI;
+using Microsoft.Extensions.Logging;
+
+namespace KTI_Testing__Mobile_
 {
     public partial class MainPage : ContentPage
     {
@@ -9,11 +13,31 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void cameraview_CamerasLoaded(object sender, EventArgs e)
         {
-            CounterBtn.Text = "nahhh";
+            if (cameraView.Cameras.Count > 0)
+            {
+                cameraView.Camera = cameraView.Cameras.First();
+                MainThread.BeginInvokeOnMainThread(async() =>
+                {
+                    //Task.Delay(500);
+                    await cameraView.StopCameraAsync();
+                    await cameraView.StartCameraAsync();
+                });
+            }
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void cameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs args)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                barcodeResult.Text = $"{args.Result[0].BarcodeFormat}: {args.Result[0].Text}";
+            });
+        }
+
+        private void sendToPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new NewPage1());
         }
     }
 

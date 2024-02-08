@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="KTI_Testing__Mobile_.MainPage">
 
     <ScrollView BackgroundColor="#0055F0">
@@ -8,7 +9,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="anger.png"
+                Source="anger.png" 
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
@@ -22,14 +23,20 @@
                 Text="Press the button to log in"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" Background="#FFFFFF" />
+            <Button 
+                Background="#3CFF00" 
+                Text="Click here if you're brave"
+                Clicked="sendToPage"/>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            <Label
+    x:Name="barcodeResult"
+    Text="Below this is a barcode scanner!!"
+    Style="{StaticResource Headline}"
+    SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
+            
+            <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
+                           BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
         </VerticalStackLayout>
     </ScrollView>
 

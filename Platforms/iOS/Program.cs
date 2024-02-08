@@ -1,10 +1,14 @@
 ﻿using ObjCRuntime;
 using UIKit;
+using Camera.MAUI;
+using Microsoft.Extensions.Logging;
 
 namespace KTI_Testing__Mobile_
 {
     public class Program
     {
+        
+
         // This is the main entry point of the application.
         static void Main(string[] args)
         {
