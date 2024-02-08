@@ -35,9 +35,14 @@ namespace KTI_Testing__Mobile_
             });
         }
 
-        private void sendToPage(object sender, EventArgs e)
+        private async void sendToPage(object sender, EventArgs e)
         {
-            App.Current.MainPage = new NavigationPage(new NewPage1());
+            await Navigation.PushAsync(new Login());
+        }
+
+        private async void sendToPage2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new testPage());
         }
     }
 

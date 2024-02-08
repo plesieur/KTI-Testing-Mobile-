@@ -28,6 +28,11 @@
                 Background="#3CFF00" 
                 Text="Click here if you're brave"
                 Clicked="sendToPage"/>
+            <Button 
+    Background="#3CFF00" 
+    Text="Click here if you're brave"
+    Clicked="sendToPage2"/>
+  
 
             <Label
     x:Name="barcodeResult"
