@@ -28,5 +28,12 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to know ur SSN. pls yell it out loudly</string>
 </dict>
 </plist>
