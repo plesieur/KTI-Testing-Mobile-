@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="KTI_Testing__Mobile_.MainPage">
 
     <ScrollView BackgroundColor="#387BF5">
@@ -33,33 +34,25 @@
                 Text="Bang stick"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" Background="#FFFFFF" />
+            <Button 
+                Background="#3CFF00" 
+                Text="Click here if you're brave"
+                Clicked="sendToPage"/>
+            <Button 
+    Background="#3CFF00" 
+    Text="Click here if you're brave"
+    Clicked="sendToPage2"/>
+  
 
-            <Button
-                x:Name="AddBtn"
-                Text=" + " 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" BackgroundColor="#FFC800" FlowDirection="MatchParent" FontSize="Large" AnchorX="0.5" AnchorY="0.5" />
-
-            <Button
-                x:Name="SubBtn"
-                Text=" - " 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" Background="#FFBE00" AnchorX="0.1" AnchorY="0.1" />
-            <Image
-                Source="settings.png"
-                HeightRequest="100"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" AnchorX="-100" />
-            <Image
-                Source="nothome.png"
-                HeightRequest="100"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" AnchorX="-100" AnchorY="50" />
+            <Label
+    x:Name="barcodeResult"
+    Text="Below this is a barcode scanner!!"
+    Style="{StaticResource Headline}"
+    SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
             
-                
+            <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
+                           BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
         </VerticalStackLayout>
     </ScrollView>
 
