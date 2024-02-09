@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KTI_Testing__Mobile_.MainPage">
 
-    <ScrollView BackgroundColor="#0055F0">
+    <ScrollView BackgroundColor="#387BF5">
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
@@ -17,19 +17,49 @@
                 Text="Welcome to KTI Inventory!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
-
             <Label
-                Text="Press the button to add or "
+                Text="Tools Available"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Image
+                Source="bang_stick.png"
+                HeightRequest="50"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+            
+            <Label
+                Text="Bang stick"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
+                x:Name="AddBtn"
+                Text=" + " 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill" BackgroundColor="#FFC800" FlowDirection="MatchParent" FontSize="Large" AnchorX="0.5" AnchorY="0.5" />
+
+            <Button
+                x:Name="SubBtn"
+                Text=" - " 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" Background="#FFBE00" AnchorX="0.1" AnchorY="0.1" />
+            <Image
+                Source="settings.png"
+                HeightRequest="100"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" AnchorX="-100" />
+            <Image
+                Source="nothome.png"
+                HeightRequest="100"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" AnchorX="-100" AnchorY="50" />
+            
+                
         </VerticalStackLayout>
     </ScrollView>
 

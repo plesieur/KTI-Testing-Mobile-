@@ -6,12 +6,17 @@
         {
             InitializeComponent();
         }
-
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            CounterBtn.Text = "bitch";
+             
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+
+            AddBtn.Text = " +1 ";
+            SubBtn.Text = " -1 ";
+
+
+            SemanticScreenReader.Announce(AddBtn.Text);
+            SemanticScreenReader.Announce(SubBtn.Text);
         }
     }
 
