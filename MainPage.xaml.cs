@@ -1,46 +1,33 @@
-﻿using KTI_Testing__Mobile_.pages;
-using Camera.MAUI;
-using Microsoft.Extensions.Logging;
-
-namespace KTI_Testing__Mobile_
+﻿namespace MauiApp2
 {
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void cameraview_CamerasLoaded(object sender, EventArgs e)
+        
+
+        private void GoToProfilePage(object sender, EventArgs e)
         {
-            if (cameraView.Cameras.Count > 0)
-            {
-                cameraView.Camera = cameraView.Cameras.First();
-                MainThread.BeginInvokeOnMainThread(async() =>
-                {
-                    //Task.Delay(500);
-                    await cameraView.StopCameraAsync();
-                    await cameraView.StartCameraAsync();
-                });
-            }
+            Shell.Current.GoToAsync(nameof(ProfilePage));
         }
 
-        private void cameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs args)
+        private void GoToHistoryPage(object sender, EventArgs e) 
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                barcodeResult.Text = $"{args.Result[0].BarcodeFormat}: {args.Result[0].Text}";
-            });
+            Shell.Current.GoToAsync(nameof(HistoryPage));
         }
 
-        private async void sendToPage(object sender, EventArgs e)
+        private void GoToCartPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Login());
+            Shell.Current.GoToAsync(nameof(CartPage));
         }
 
-        private async void sendToPage2(object sender, EventArgs e)
+        private void GoToSettingPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new testPage());
+            Shell.Current.GoToAsync(nameof(SettingsPage));
         }
     }
 

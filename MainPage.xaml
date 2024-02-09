@@ -1,51 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
-             x:Class="KTI_Testing__Mobile_.MainPage">
+             x:Class="MauiApp2.MainPage">
 
-    <ScrollView BackgroundColor="#0055F0">
-
-        <Grid RowDefinitions="100, Auto, *"
-              ColumnDefinitions=" .75*, .25*"
-              Padding="10">
-            
-            
-            <Image
-                Grid.ColumnSpan="2"
-                Source="anger.png" 
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
-
-            <Label
-                Text="Welcome to KTI Inventory!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
-            <Label
-                Text="Tools Available"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" Background="#FFFFFF" />
-            <Button 
-                Background="#3CFF00" 
-                Text="Click here if you're brave"
-                Clicked="sendToPage"/>
-            <Button 
-                Background="#3CFF00" 
-                Text="Click here if you're brave"
-                Clicked="sendToPage2"/>
-            <Label
-                x:Name="barcodeResult"
-                Text="Below this is a barcode scanner!!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
-
-            <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
-               BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
+    <Grid RowDefinitions= "100, *, Auto, 75"
+          ColumnDefinitions="0.25*, 0.25*, 0.25*, 0.25*"
+          Padding="10"
+          ColumnSpacing="10">
 
 
-        </Grid>
-    </ScrollView>
+        <Button Text="Profile"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="GoToProfilePage"
+                
+                />
+        
+        <Button Text="History"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="GoToHistoryPage"
+                />
+        
+        <Button Text="Cart"
+                Grid.Row="3"
+                Grid.Column="2"
+                Clicked="GoToCartPage"
+                />
+
+        <Button Text="Settings"
+                Grid.Row="3"
+                Grid.Column="3"
+                Clicked="GoToSettingPage"
+                />
+
+    </Grid>
 
 </ContentPage>
