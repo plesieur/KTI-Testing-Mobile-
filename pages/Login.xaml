@@ -4,9 +4,16 @@
              x:Class="KTI_Testing__Mobile_.pages.Login"
              Title="Login">
     <VerticalStackLayout>
+        <Image
+            Source="icon.png"
+            HeightRequest="185"
+            Aspect="AspectFit"
+            SemanticProperties.Description="dot net bot in a race car number eight" />
+
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Items"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
     </VerticalStackLayout>
 </ContentPage>
