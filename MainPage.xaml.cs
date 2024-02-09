@@ -6,8 +6,6 @@ namespace KTI_Testing__Mobile_
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();

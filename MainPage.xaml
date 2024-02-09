@@ -22,9 +22,8 @@
                 Text="Welcome to KTI Inventory!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
-
             <Label
-                Text="Press the button to log in"
+                Text="Tools Available"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" Background="#FFFFFF" />
