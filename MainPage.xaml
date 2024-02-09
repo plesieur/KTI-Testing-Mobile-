@@ -5,10 +5,14 @@
              x:Class="KTI_Testing__Mobile_.MainPage">
 
     <ScrollView BackgroundColor="#0055F0">
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+
+        <Grid RowDefinitions="100, Auto, *"
+              ColumnDefinitions=" .75*, .25*"
+              Padding="10">
+            
+            
             <Image
+                Grid.ColumnSpan="2"
                 Source="anger.png" 
                 HeightRequest="185"
                 Aspect="AspectFit"
@@ -29,20 +33,20 @@
                 Text="Click here if you're brave"
                 Clicked="sendToPage"/>
             <Button 
-    Background="#3CFF00" 
-    Text="Click here if you're brave"
-    Clicked="sendToPage2"/>
-  
-
+                Background="#3CFF00" 
+                Text="Click here if you're brave"
+                Clicked="sendToPage2"/>
             <Label
-    x:Name="barcodeResult"
-    Text="Below this is a barcode scanner!!"
-    Style="{StaticResource Headline}"
-    SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
-            
+                x:Name="barcodeResult"
+                Text="Below this is a barcode scanner!!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
+
             <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
-                           BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
-        </VerticalStackLayout>
+               BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
+
+
+        </Grid>
     </ScrollView>
 
 </ContentPage>
