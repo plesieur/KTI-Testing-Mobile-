@@ -13,7 +13,7 @@ namespace MauiApp2
     {
         public ProfilePage()
         {
-            
+            InitializeComponent();
         }
     }
 }

@@ -5,9 +5,11 @@
              Title="ProfilePage">
 
     <VerticalStackLayout>
+        <Image Source="Images/anger.png" ScaleX="0.5" ScaleY="0.5"/>
         <Label 
-        Text="Welcome to .NET MAUI!"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+            Text="Welcome User!" HorizontalTextAlignment="Center" TranslationY="-85" />
+
+        <Label Text="Email:" Margin="15,0,0,0"/>
+        <Label Text="youremail123@gmail.com" Margin="25,0,0,0"/>
     </VerticalStackLayout>
 </ContentPage>
