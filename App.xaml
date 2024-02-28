@@ -10,5 +10,10 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+        <Style TargetType="Frame" Class="Items">
+            <Setter Property="MaximumHeightRequest" Value="300"></Setter>
+            <Setter Property="MaximumWidthRequest" Value="1000"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
