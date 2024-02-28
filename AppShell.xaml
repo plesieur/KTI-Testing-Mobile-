@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="KTI_Testing__Mobile_.AppShell"
@@ -9,7 +10,7 @@
 
     <ShellContent
         Title="K.T.I"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="loginPage" />
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="MainPage" />
 
 </Shell>

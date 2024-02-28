@@ -3,7 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KTI_Testing__Mobile_.loginPage"
              Title="loginPage">
-    <Grid BackgroundColor="LightBlue">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
+        <StackLayout>
+            <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
+                <Image Source="icon.png" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="50"/>
+               <RowDefinition Height="50"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="40"/>
+               <RowDefinition Height="40"/>
+               <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Text="Welcome" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
+            <Label Grid.Row="2" Text="Sign in" HorizontalOptions="Center" FontSize="Subtitle"/>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    
+                </Frame>
+            </StackLayout>
+        </Grid>
     </Grid>
 </ContentPage>
