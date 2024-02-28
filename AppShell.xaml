@@ -4,12 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp2"
-    Shell.FlyoutBehavior="Disabled"
-    Title="MauiApp2">
-
+    Shell.FlyoutBehavior="Flyout"
+    Title="MauiApp2"
+    BackgroundColor="Orange"
+     >
+    <ShellContent
+     Title="Login"
+     Shell.FlyoutBehavior="Disabled"
+     ContentTemplate="{DataTemplate local:MauiLoginPage}"
+     Route="MainPage" />
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="Profile"
+         ContentTemplate="{DataTemplate local:ProfilePage}"
+         Route="ProfilePage" />
+    <ShellContent
+        Title="history"
+        ContentTemplate="{DataTemplate local:HistoryPage}"
+        Route="HistoryPage" />
+    <ShellContent
+        Title="cart"
+        ContentTemplate="{DataTemplate local:CartPage}"
+        Route="CartPage" />
 
 </Shell>

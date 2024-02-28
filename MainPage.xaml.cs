@@ -7,15 +7,12 @@
         {
             InitializeComponent();
         }
-
-        
-
         private void GoToProfilePage(object sender, EventArgs e)
         {
             Shell.Current.GoToAsync(nameof(ProfilePage));
         }
 
-        private void GoToHistoryPage(object sender, EventArgs e) 
+        private void GoToHistoryPage(object sender, EventArgs e)
         {
             Shell.Current.GoToAsync(nameof(HistoryPage));
         }
@@ -29,6 +26,9 @@
         {
             Shell.Current.GoToAsync(nameof(SettingsPage));
         }
+
+
+
     }
 
 }
