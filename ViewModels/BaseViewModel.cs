@@ -1,10 +1,11 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-namespace KTI_Testing__Mobile_.ViewModels
+namespace KTI_Testing__Mobile_.ViewModels;
+
+public partial class BaseViewModel : ObservableObject
 {
-    public partial class BaseViewModel : ObservableObject
-    {
-        [ObservableProperty]
-        public bool _isBusy;
-        [ObservableProperty]
-        public string _title;
-    }
+    [ObservableProperty]
+    public bool _isBusy;
+
+    [ObservableProperty]
+    public string _title;
+}

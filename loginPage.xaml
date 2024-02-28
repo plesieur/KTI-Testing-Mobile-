@@ -12,7 +12,7 @@
 
         <StackLayout>
             <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
-                <Image Source="icon.png" Aspect="AspectFill" Margin="0"/>
+                <Image Source="images/icon/icon.png" Aspect="AspectFill" Margin="0"/>
             </Frame>
         </StackLayout>
         <Grid>
@@ -30,7 +30,34 @@
 
             <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue">
+                            <Image Source="images/icon/icon.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Username}" Placeholder="Username" TextColor="black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue">
+                            <Image Source="images/icon/icon.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Password}" Placeholder="Username" TextColor="black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+                
+                <StackLayout>
+                    <CheckBox IsChecked="False"/>
+                    <Label Text="Remember me"/>
+                    <Label Text="Forget Password"/>
+                </StackLayout>
+
+                <Button Text="Sign In"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="New User"/>
+                    <Label Text="Sign Up"/>
+                </StackLayout>
+                
             </StackLayout>
         </Grid>
     </Grid>

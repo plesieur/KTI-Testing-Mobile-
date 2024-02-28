@@ -5,12 +5,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:KTI_Testing__Mobile_"
-    Shell.FlyoutBehavior="Disabled"
-    Title="KTI_Testing__Mobile_">
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
         Title="K.T.I"
-        ContentTemplate="{DataTemplate local:LoginPage}"
+        ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
 </Shell>
