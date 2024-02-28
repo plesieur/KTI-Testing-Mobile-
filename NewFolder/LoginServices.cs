@@ -17,7 +17,7 @@ namespace KTI_Testing__Mobile_.NewFolder
                     var userinfo = new UserInfo();
                     var client = new HttpClient();
 
-                    string url = "http://temp" + username + "/" + password;
+                    string url = "http://temp2" + username + "/" + password;
 
                     client.BaseAddress = new Uri(url);
 
