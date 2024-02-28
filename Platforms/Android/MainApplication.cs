@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Runtime;
+using MauiApp2;
 
 namespace KTI_Testing__Mobile_
 {
@@ -13,4 +14,5 @@ namespace KTI_Testing__Mobile_
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
+
 }

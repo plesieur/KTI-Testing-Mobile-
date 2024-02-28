@@ -7,19 +7,20 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiApp2">
     <ShellContent
-     Title="Home"
-     ContentTemplate="{DataTemplate local:MainPage}"
-     Route="MainPage" />
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
     <ShellContent
-     Title="Profile"
-      ContentTemplate="{DataTemplate local:ProfilePage}"
-      Route="ProfilePage" />
+        Title="Profile"
+         ContentTemplate="{DataTemplate local:ProfilePage}"
+         Route="ProfilePage" />
     <ShellContent
-     Title="history"
-     ContentTemplate="{DataTemplate local:HistoryPage}"
-     Route="HistoryPage" />
+        Title="history"
+        ContentTemplate="{DataTemplate local:HistoryPage}"
+        Route="HistoryPage" />
     <ShellContent
-     Title="cart"
-     ContentTemplate="{DataTemplate local:CartPage}"
-     Route="CartPage" />
+        Title="cart"
+        ContentTemplate="{DataTemplate local:CartPage}"
+        Route="CartPage" />
+
 </Shell>

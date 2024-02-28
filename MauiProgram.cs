@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using KTI_Testing__Mobile_.Resources.viewModels;
+using Microsoft.Extensions.Logging;
 
 namespace MauiApp2
 {
@@ -14,10 +15,11 @@ namespace MauiApp2
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
-#if DEBUG
+            
     		builder.Logging.AddDebug();
-#endif
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MauiLoginPage>();
+            builder.Services.AddSingleton<LoginPageViewModel>();
 
             return builder.Build();
         }
