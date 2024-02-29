@@ -1,5 +1,6 @@
 ﻿using KTI_Testing__Mobile_.Models;
 using KTI_Testing__Mobile_.NewFolder;
+using KTI_Testing__Mobile_.NewFolder1;
 using MauiApp2;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -39,6 +40,9 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
                 string userDetails = JsonConvert.SerializeObject(userInfo);
                 Preferences.Set(nameof(App.UserInfo), userDetails);
                 App.UserInfo = userInfo;
+
+                AppShell.Current.FlyoutHeader = new NewContent1();
+
 
                 await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
