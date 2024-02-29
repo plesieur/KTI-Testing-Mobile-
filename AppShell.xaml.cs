@@ -1,4 +1,4 @@
-﻿
+﻿using KTI_Testing__Mobile_.Pages;
 
 namespace MauiApp2
 {
@@ -13,6 +13,7 @@ namespace MauiApp2
             Routing.RegisterRoute(nameof(HistoryPage), typeof(HistoryPage));
             Routing.RegisterRoute(nameof(CartPage), typeof(CartPage));
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
+            Routing.RegisterRoute(nameof(Tool), typeof(Tool));
         }
     }
 }

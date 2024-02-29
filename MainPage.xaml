@@ -5,7 +5,10 @@
              Background="AliceBlue">
 
     <StackLayout>
-        <Frame BackgroundColor="#FF0000" StyleClass="Items"></Frame>
+        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" ></Button>
+        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
+        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
+        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button>
     </StackLayout>
 
 </ContentPage>

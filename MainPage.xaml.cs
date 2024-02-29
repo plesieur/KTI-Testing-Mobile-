@@ -1,5 +1,9 @@
-﻿namespace MauiApp2
+﻿using KTI_Testing__Mobile_;
+using KTI_Testing__Mobile_.Pages;
+
+namespace MauiApp2
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
 
@@ -27,7 +31,10 @@
             Shell.Current.GoToAsync(nameof(SettingsPage));
         }
 
-
+        private void TakeMeAway(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync(nameof(Tool));
+        }
 
     }
 
