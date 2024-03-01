@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="KTI_Testing__Mobile_.AppShell"
@@ -13,3 +14,32 @@
         Route="loginPage" />
 
 </Shell>
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2"
+    Shell.FlyoutBehavior="Flyout"
+    BackgroundColor="Orange"
+    Title="MauiApp2">
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Profile"
+         ContentTemplate="{DataTemplate local:ProfilePage}"
+         Route="ProfilePage" />
+    <ShellContent
+        Title="history"
+        ContentTemplate="{DataTemplate local:HistoryPage}"
+        Route="HistoryPage" />
+    <ShellContent
+        Title="cart"
+        ContentTemplate="{DataTemplate local:CartPage}"
+        Route="CartPage" />
+
+</Shell>
+>>>>>>> 9de85422eedad9d7603e5bd792168b1c5d5cbaad

@@ -1,14 +1,28 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:KTI_Testing__Mobile_"
-             x:Class="KTI_Testing__Mobile_.App">
+             xmlns:local="clr-namespace:MauiApp2"
+             x:Class="MauiApp2.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Button" Class="Items">
+                <Setter Property="MaximumHeightRequest" Value="300"></Setter>
+                <Setter Property="MaximumWidthRequest" Value="1000"></Setter>
+                <Setter Property="BackgroundColor" Value="Green"></Setter>
+                <Setter Property="Margin" Value="15,15,15,0"></Setter>
+                <Setter Property="HeightRequest" Value="120"></Setter>
+                <Setter Property="FontSize" Value="28"></Setter>
+            </Style>
+
+            <Style TargetType="Label" Class="toolName">
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="FontFamily" Value="sans-serif"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

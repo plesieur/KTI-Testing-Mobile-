@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
-             x:Class="KTI_Testing__Mobile_.MainPage">
+             x:Class="MauiApp2.MainPage"
+             Background="AliceBlue">
 
     <ScrollView BackgroundColor="#387BF5">
         <VerticalStackLayout
@@ -28,16 +28,16 @@
                 Text="Click here if you're brave"
                 Clicked="sendToPage"/>
             <Button 
-                Background="#3CFF00" 
-                Text="Click here if you're brave"
-                Clicked="sendToPage2"/>
+    Background="#3CFF00" 
+    Text="Click here if you're brave"
+    Clicked="sendToPage2"/>
   
 
             <Label
-                x:Name="barcodeResult"
-                Text="Below this is a barcode scanner!!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
+    x:Name="barcodeResult"
+    Text="Below this is a barcode scanner!!"
+    Style="{StaticResource Headline}"
+    SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
             
             <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
                            BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
