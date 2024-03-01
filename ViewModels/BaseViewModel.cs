@@ -7,5 +7,5 @@ public partial class BaseViewModel : ObservableObject
     public bool _isBusy;
 
     [ObservableProperty]
-    public string _title;
+    public required string _title;
 }
