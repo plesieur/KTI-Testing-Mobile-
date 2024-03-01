@@ -1,4 +1,4 @@
-namespace KTI_Testing__Mobile_.Pages;
+namespace KTI_Testing__Mobile_;
 
 public partial class ToolsPage : ContentPage
 {
