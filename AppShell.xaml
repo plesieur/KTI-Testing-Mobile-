@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="KTI_Testing__Mobile_.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:KTI_Testing__Mobile_"
-    Shell.FlyoutBehavior="Disabled"
-    Title="KTI_Testing__Mobile_">
-
-    <ShellContent
-        Title="K.T.I"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="loginPage" />
-
-</Shell>
-=======
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="MauiApp2.AppShell"
@@ -22,8 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp2"
     Shell.FlyoutBehavior="Flyout"
+    Title="MauiApp2"
     BackgroundColor="Orange"
-    Title="MauiApp2">
+     >
+    <!--
+    <ShellContent
+    Title="Login"
+     Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate local:MauiLoginPage}"
+    Route="MainPage" />-->
+
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
@@ -41,5 +32,10 @@
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
 
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
 </Shell>
->>>>>>> 9de85422eedad9d7603e5bd792168b1c5d5cbaad
