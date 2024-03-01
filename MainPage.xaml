@@ -4,12 +4,44 @@
              x:Class="MauiApp2.MainPage"
              Background="AliceBlue">
 
-    <StackLayout>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" ></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button> 
-        
-    </StackLayout>
+    <ScrollView BackgroundColor="#387BF5">
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="icon.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Welcome to KTI Inventory!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
+            <Label
+                Text="Tools Available"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" Background="#FFFFFF" />
+            <Button 
+                Background="#3CFF00" 
+                Text="Click here if you're brave"
+                Clicked="sendToPage"/>
+            <Button 
+    Background="#3CFF00" 
+    Text="Click here if you're brave"
+    Clicked="sendToPage2"/>
+  
+
+            <Label
+    x:Name="barcodeResult"
+    Text="Below this is a barcode scanner!!"
+    Style="{StaticResource Headline}"
+    SemanticProperties.HeadingLevel="Level1" TextColor="#FF8C00" />
+            
+            <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="200" CamerasLoaded="cameraview_CamerasLoaded"
+                           BarCodeDetectionEnabled="True" BarcodeDetected="cameraView_BarcodeDetected"/>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
