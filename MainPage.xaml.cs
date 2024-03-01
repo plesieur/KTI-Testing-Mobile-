@@ -1,5 +1,4 @@
 ﻿using KTI_Testing__Mobile_;
-using KTI_Testing__Mobile_.Pages;
 
 namespace MauiApp2
 {
