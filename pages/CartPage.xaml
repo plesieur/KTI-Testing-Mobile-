@@ -5,35 +5,35 @@
              Title="CartPage">
 
         <Grid RowDefinitions= "100, *, Auto, 75"
-  ColumnDefinitions="0.25*, 0.25*, 0.25*, 0.25*"
-  Padding="10"
-  ColumnSpacing="10">
+            ColumnDefinitions="0.25*, 0.25*, 0.25*, 0.25*"
+            Padding="10"
+            ColumnSpacing="10">
 
 
-        <Button Text="Profile"
-        Grid.Row="3"
-        Grid.Column="0"
-        Clicked="GoToProfilePage"
+            <Button Text="Profile"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="GoToProfilePage"
 
-        />
+            />
 
-        <Button Text="History"
-        Grid.Row="3"
-        Grid.Column="1"
-        Clicked="GoToHistoryPage"
-        />
+            <Button Text="History"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="GoToHistoryPage"
+            />
 
-        <Button Text="Cart"
-        Grid.Row="3"
-        Grid.Column="2"
-        Clicked="GoToCartPage"
-        />
+            <Button Text="Cart"
+                Grid.Row="3"
+                Grid.Column="2"
+                Clicked="GoToCartPage"
+            />
 
-        <Button Text="Settings"
-        Grid.Row="3"
-        Grid.Column="3"
-        Clicked="GoToSettingPage"
-        />
+            <Button Text="Settings"
+                Grid.Row="3"
+                Grid.Column="3"
+                Clicked="GoToSettingPage"
+            />
 
-    </Grid>
+        </Grid>
 </ContentPage>
