@@ -8,7 +8,8 @@
         <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" ></Button>
         <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
         <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button>
+        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button> 
+        
     </StackLayout>
 
 </ContentPage>

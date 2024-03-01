@@ -33,7 +33,7 @@ namespace MauiApp2
 
         private void TakeMeAway(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync(nameof(Tool));
+            Shell.Current.GoToAsync(nameof(ToolsPage));
         }
 
     }
