@@ -8,9 +8,8 @@
     Title="MauiApp2"
     BackgroundColor="Orange"
      >
-    <!--
     <ShellContent
-    Title="Login"
+     Title="Login"
      Shell.FlyoutBehavior="Disabled"
      ContentTemplate="{DataTemplate local:MauiLoginPage}"
       />
@@ -36,5 +35,4 @@
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
         </StackLayout>
     </Shell.FlyoutFooter>
-
 </Shell>
