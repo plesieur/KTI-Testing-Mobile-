@@ -8,8 +8,9 @@
     Title="MauiApp2"
     BackgroundColor="Orange"
      >
+    <!--
     <ShellContent
-     Title="Login"
+    Title="Login"
      Shell.FlyoutBehavior="Disabled"
      ContentTemplate="{DataTemplate local:MauiLoginPage}"
       />
@@ -29,5 +30,11 @@
         Title="cart"
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
