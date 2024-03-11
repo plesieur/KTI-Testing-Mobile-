@@ -4,7 +4,7 @@ using MauiApp2;
 
 namespace KTI_Testing__Mobile_
 {
-    [Application]
+    [Application(UsesCleartextTraffic = true)]
     public class MainApplication : MauiApplication
     {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)
