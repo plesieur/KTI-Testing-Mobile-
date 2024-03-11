@@ -1,3 +1,49 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MauiApp2"
+    BackgroundColor="Orange"
+     >
+    <!--
+    <ShellContent
+    Title="Login"
+     Shell.FlyoutBehavior="Disabled"
+    ContentTemplate="{DataTemplate local:MauiLoginPage}"
+    Route="MainPage" />-->
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Profile"
+         ContentTemplate="{DataTemplate local:ProfilePage}"
+         Route="ProfilePage" />
+    <ShellContent
+        Title="history"
+        ContentTemplate="{DataTemplate local:HistoryPage}"
+        Route="HistoryPage" />
+    <ShellContent
+        Title="cart"
+        ContentTemplate="{DataTemplate local:CartPage}"
+        Route="CartPage" />
+    <ShellContent
+        Title="Borrow Item"
+        ContentTemplate="{DataTemplate local:Borrow}"
+        Route="Borrow" />
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+=======
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="MauiApp2.AppShell"
@@ -29,14 +75,11 @@
         Title="cart"
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
-    <ShellContent
-        Title="Borrow Item"
-        ContentTemplate="{DataTemplate local:Borrow}"
-        Route="Borrow" />
 
     <Shell.FlyoutFooter>
         <StackLayout>
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
         </StackLayout>
     </Shell.FlyoutFooter>
+>>>>>>> 0b5d0eafc31814b3cedd0a2200cca34717b87475
 </Shell>
