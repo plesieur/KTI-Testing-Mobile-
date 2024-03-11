@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KTI_Testing__Mobile_.ToolsPage"
              Title="ToolsPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout StyleClass="body">
         <Label 
             Text="TOOL INFO"
             Style="{StaticResource Headline}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+            
 
     </VerticalStackLayout>
 </ContentPage>

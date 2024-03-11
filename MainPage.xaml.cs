@@ -1,4 +1,6 @@
 ﻿using KTI_Testing__Mobile_;
+using KTI_Testing__Mobile_.Models;
+using System.Collections;
 
 namespace MauiApp2
 {
@@ -6,9 +8,19 @@ namespace MauiApp2
     public partial class MainPage : ContentPage
     {
 
+        List<Tool> toolList = new List<Tool>();
+
+        Style MyStyle;
         public MainPage()
         {
             InitializeComponent();
+
+            Tool cloneTool = new Tool(1,"Hammer","a bangy boi","hehe",50);
+
+            for(int i = 0; i < 20; i++)
+            {
+                addItem(cloneTool);
+            }
         }
         private void GoToProfilePage(object sender, EventArgs e)
         {
@@ -30,9 +42,17 @@ namespace MauiApp2
             Shell.Current.GoToAsync(nameof(SettingsPage));
         }
 
-        private void TakeMeAway(object sender, EventArgs e)
+        private async void TakeMeAway(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync(nameof(ToolsPage));
+            await Navigation.PushAsync(new ToolsPage());
+        }
+
+        private void addItem(Tool tool)
+        {
+            toolList.Add(tool);
+
+            //var button = new Button { Text = tool.Name , StyleClass="items"};
+            //listBox.Children.Add(button);
         }
 
     }

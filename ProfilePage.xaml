@@ -4,7 +4,7 @@
              x:Class="MauiApp2.ProfilePage"
              Title="ProfilePage">
 
-    <VerticalStackLayout>
+    <VerticalStackLayout StyleClass="body">
         <Image Source="anger.png" ScaleX="0.5" ScaleY="0.5"/>
         <Label 
             Text="Welcome User!" HorizontalTextAlignment="Center" TranslationY="-85"/>
