@@ -40,7 +40,8 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
                 Preferences.Set(nameof(App.UserInfo), userDetails);
                 App.UserInfo = userInfo;
 
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                // This causes error
+                await Shell.Current.GoToAsync("//MainPage");
             }
         }
     }

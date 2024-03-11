@@ -12,7 +12,7 @@
      Title="Login"
      Shell.FlyoutBehavior="Disabled"
      ContentTemplate="{DataTemplate local:MauiLoginPage}"
-     Route="MainPage" />
+      />
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
