@@ -22,7 +22,7 @@
         Clicked="GoToHistoryPage"
         />
 
-        <Button Text="Cart"
+        <Button Text="Inventory"
         Grid.Row="3"
         Grid.Column="2"
         Clicked="GoToCartPage"

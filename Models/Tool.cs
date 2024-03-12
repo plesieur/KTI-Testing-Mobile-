@@ -6,23 +6,13 @@ using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.Models
 {
-    class Tool
+    class Tool(int i, string n, string d, string icon, int a)
     {
-        private int id;
-        private string name;
-        private string description;
-        private string icon;
-        private int amount;
-
-
-        public Tool(int i, string n, string d, string icon, int a)
-        {
-            this.id = i;
-            this.name = n;
-            this.description = d;
-            this.icon = icon;
-            this.amount = a;
-        }
+        private int id = i;
+        private string name = n;
+        private string description = d;
+        private string icon = icon;
+        private int amount = a;
 
         public int Id
         {
@@ -35,7 +25,7 @@ namespace KTI_Testing__Mobile_.Models
             get { return name; }
             set { name = value; }
         }
-        public string Desc
+        public string Description
         {
             get { return description; }
             set { description = value; }
