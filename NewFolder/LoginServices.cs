@@ -1,4 +1,5 @@
 ﻿using KTI_Testing__Mobile_.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,28 +16,22 @@ namespace KTI_Testing__Mobile_.NewFolder
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
                     var userinfo = new UserInfo();
-                    var client = new HttpClient();
 
-                    string url = "http://temp2" + username + "/" + password;
-
-                    client.BaseAddress = new Uri(url);
-
-                    HttpResponseMessage reponse = await client.GetAsync("");
-
-                    if (reponse.IsSuccessStatusCode)
+                    using var client = new HttpClient();
+                    Uri uri = new Uri("http://10.0.2.2:3000/test2");
+                    var formContent = new FormUrlEncodedContent(new[]
                     {
-                        userinfo = await reponse.Content.ReadFromJsonAsync<UserInfo>();
-                        return await Task.FromResult(userinfo);
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
+                        new KeyValuePair<string, string>("id", "john"),
+                    });
+
+                    var myHttpClient = new HttpClient();
+                    var response = await myHttpClient.PostAsync(uri.ToString(), formContent);
+                }   
                 else 
                 {
                     return null;
                 }
+            return null;
             
         }
     }

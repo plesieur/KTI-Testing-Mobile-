@@ -31,6 +31,10 @@
         Title="cart"
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
+    <ShellContent
+        Title="Borrow Items"
+        ContentTemplate="{DataTemplate local:Borrow}"
+        Route="Borrow" />
 
     <Shell.FlyoutFooter>
         <StackLayout>
