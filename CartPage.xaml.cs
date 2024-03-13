@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace MauiApp2
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
         public CartPage()
