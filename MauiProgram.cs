@@ -1,6 +1,7 @@
 ﻿using Camera.MAUI;
 using KTI_Testing__Mobile_.Resources.viewModels;
 using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui.Markup;
 
 namespace MauiApp2
 {
@@ -22,6 +23,7 @@ namespace MauiApp2
             builder.Services.AddSingleton<MauiLoginPage>();
             builder.Services.AddSingleton<LoginPageViewModel>();
             builder.UseMauiCameraView();
+            builder.UseMauiApp<App>().UseMauiCommunityToolkitMarkup();
             return builder.Build();
         }
     }

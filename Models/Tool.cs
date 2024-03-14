@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.Models
 {
-    class Tool
+    public class Tool
     {
         private int id;
         private string name;
@@ -52,8 +52,5 @@ namespace KTI_Testing__Mobile_.Models
             get { return amount; }
             set { amount = value; }
         }
-
-
-
     }
 }

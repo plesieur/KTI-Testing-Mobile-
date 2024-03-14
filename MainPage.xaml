@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.MainPage">
 
-    <StackLayout x:Name="listBox" StyleClass="body">
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" x:Name="Hammer"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
-        <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button>
-    </StackLayout>
-
+    <ScrollView>
+        <StackLayout x:Name="listBox" StyleClass="body">
+            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" x:Name="Hammer"></Button>
+            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
+            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
+            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

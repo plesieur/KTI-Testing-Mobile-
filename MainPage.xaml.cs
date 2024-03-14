@@ -1,6 +1,7 @@
 ﻿using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
 using System.Collections;
+using CommunityToolkit.Maui.Markup;
 
 namespace MauiApp2
 {
@@ -9,9 +10,8 @@ namespace MauiApp2
     {
 
         List<Tool> toolList = new List<Tool>();
-
-        Style MyStyle;
-        public MainPage()
+        
+    public MainPage()
         {
             InitializeComponent();
 
@@ -50,9 +50,29 @@ namespace MauiApp2
         private void addItem(Tool tool)
         {
             toolList.Add(tool);
+            IList<string> style = new List<string>();
 
-            //var button = new Button { Text = tool.Name , StyleClass="items"};
-            //listBox.Children.Add(button);
+            int[] margins = { 15, 15, 15, 0 };
+
+            new Entry
+            {
+                Keyboard = Keyboard.Numeric,
+            }.BackgroundColor(Colors.WhiteSmoke).Margin(15, 0).Height(380).Width(1000).FontSize(28);
+
+            var myStyle = new Style<Entry>(
+
+            (Entry.HeightRequestProperty, 120),
+            (Entry.MaximumWidthRequestProperty, 430),
+            (Entry.ShadowProperty, 10),
+            (Entry.TextColorProperty, Colors.Black),
+            (Entry.BackgroundColorProperty, Colors.WhiteSmoke),
+            (Entry.FontSizeProperty, 28)
+            );
+
+            Button button = new Button {Text = tool.Name, Style = myStyle};
+            button.Clicked += (s, e) => { Navigation.PushAsync(new ToolsPage(tool));};
+            button.Margin = new Thickness(15, 15, 15, 0);
+            listBox.Children.Add(button);
         }
 
     }
