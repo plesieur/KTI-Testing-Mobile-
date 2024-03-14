@@ -8,11 +8,11 @@ namespace KTI_Testing__Mobile_.Models
 {
     public class Tool
     {
-        private int id;
-        private string name;
-        private string description;
-        private string icon;
-        private int amount;
+        private int id = i;
+        private string name = n;
+        private string description = d;
+        private string icon = icon;
+        private int amount = a;
 
 
         public Tool(int i, string n, string d, string icon, int a)
