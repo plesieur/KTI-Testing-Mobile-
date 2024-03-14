@@ -25,7 +25,7 @@
                 <Setter Property="FontFamily" Value="sans-serif"></Setter>
             </Style>
 
-            <Style TargetType="ContentPage">
+            <Style TargetType="VerticalStackLayout" Class="body">
                 <Setter Property="BackgroundColor" Value="#046BCC"></Setter>
             </Style>
         </ResourceDictionary>

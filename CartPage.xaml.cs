@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace MauiApp2
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
         public CartPage()
@@ -24,11 +23,15 @@ namespace MauiApp2
             Shell.Current.GoToAsync(nameof(HistoryPage));
         }
 
-        private void GoToCartPage(object sender, EventArgs e)
+        private void GoSubmit_Clicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync(nameof(CartPage));
+            OutputLabel.Text = "Are you sure you want to hit submit?";
         }
 
+        private void GoCancle_Clicked(object sender, EventArgs e)
+        {
+
+        }
         private void GoToSettingPage(object sender, EventArgs e)
         {
             Shell.Current.GoToAsync(nameof(SettingsPage));
