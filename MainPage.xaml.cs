@@ -50,14 +50,6 @@ namespace MauiApp2
         private void addItem(Tool tool)
         {
             toolList.Add(tool);
-            IList<string> style = new List<string>();
-
-            int[] margins = { 15, 15, 15, 0 };
-
-            new Entry
-            {
-                Keyboard = Keyboard.Numeric,
-            }.BackgroundColor(Colors.WhiteSmoke).Margin(15, 0).Height(380).Width(1000).FontSize(28);
 
             var myStyle = new Style<Entry>(
 
