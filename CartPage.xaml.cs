@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
-using System.Collections;
 
 
 namespace MauiApp2
@@ -21,15 +20,6 @@ namespace MauiApp2
             {
                 AddItem(clone2Tool);
             }
-        }
-
-        private void GoCancle_Clicked(object sender, EventArgs e)
-        {
-            OutputLabel.Text = "are you sure?";
-        }
-        private void GoToSettingPage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(SettingsPage));
         }
         private void AddItem(Tool tool)
         {
