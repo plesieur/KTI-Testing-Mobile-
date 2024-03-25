@@ -62,7 +62,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\Person_icons.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\anger.png" />
+	  <None Remove="Resources\Images\Person_icons.png" />
 	</ItemGroup>
 
 	<ItemGroup>

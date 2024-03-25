@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace MauiApp2
+﻿namespace MauiApp2
 {
     public partial class CartPage : ContentPage
     {
@@ -30,7 +23,7 @@ namespace MauiApp2
 
         private void GoCancle_Clicked(object sender, EventArgs e)
         {
-
+            OutputText.Text = "Are you sure you want to hit cancel?";
         }
         private void GoToSettingPage(object sender, EventArgs e)
         {

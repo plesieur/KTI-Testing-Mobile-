@@ -15,14 +15,13 @@ namespace MauiApp2
         {
             InitializeComponent();
         }
+        private void latestSubmitions_Clicked(object sender, EventArgs e)
+        {
+           
+        }
         private void GoToProfilePage(object sender, EventArgs e)
         {
             Shell.Current.GoToAsync(nameof(ProfilePage));
-        }
-
-        private void GoToHistoryPage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(HistoryPage));
         }
 
         private void GoToCartPage(object sender, EventArgs e)
