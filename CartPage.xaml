@@ -60,4 +60,47 @@
         />
 
     </Grid>
+            <Button Text="Comform" Clicked="GoSubmit_Clicked" 
+            Grid.Row="2"
+            Grid.Column="1"
+            AnchorX="5" 
+            AnchorY="5" 
+            BackgroundColor="#1DC80E" 
+            HeightRequest="44" 
+            HorizontalOptions="Center"/>
+            <Label Text="" TextColor="Black" x:Name="OutputLabel"></Label>
+        </StackLayout>
+        
+        <Button 
+            Text="Cancel"
+            Clicked="GoCancle_Clicked"
+            Grid.Row="2"
+            Grid.Column="2"
+            AnchorX="5" 
+            AnchorY="5" 
+            BackgroundColor="#C10B0B" 
+            HeightRequest="44" 
+            HorizontalOptions="Center"
+        />
+        
+        <Button Text="Profile"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="GoToProfilePage"
+
+        />
+
+        <Button Text="History"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="GoToHistoryPage"
+        />
+
+        <Button Text="Settings"
+                Grid.Row="3"
+                Grid.Column="2"
+                Clicked="GoToSettingPage"
+        />
+
+    </Grid>
 </ContentPage>

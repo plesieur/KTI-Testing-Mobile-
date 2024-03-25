@@ -1,29 +1,37 @@
-﻿namespace MauiApp2
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace MauiApp2
 {
     public partial class CartPage : ContentPage
     {
+
         public CartPage()
         {
             InitializeComponent();
         }
-        private void GoToProfilePage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(ProfilePage));
-        }
 
-        private void GoToHistoryPage(object sender, EventArgs e)
+        public CartPage(Tool t)
         {
-            Shell.Current.GoToAsync(nameof(HistoryPage));
-        }
+            InitializeComponent();
 
-        private void GoSubmit_Clicked(object sender, EventArgs e)
-        {
-            OutputLabel.Text = "Are you sure you want to hit submit?";
-        }
+            var myStyle = new Style<Entry>(
+
+            (Entry.HeightRequestProperty, 120),
+            (Entry.MaximumWidthRequestProperty, 430),
+            (Entry.ShadowProperty, 10),
+            (Entry.TextColorProperty, Colors.Black),
+            (Entry.BackgroundColorProperty, Colors.WhiteSmoke),
+            (Entry.FontSizeProperty, 28)
+            );
 
         private void GoCancle_Clicked(object sender, EventArgs e)
         {
-            OutputText.Text = "Are you sure you want to hit cancel?";
+
         }
         private void GoToSettingPage(object sender, EventArgs e)
         {

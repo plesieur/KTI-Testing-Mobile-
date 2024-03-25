@@ -8,8 +8,9 @@
             Text="TOOL INFO"
             Style="{StaticResource Headline}"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-            
+            HorizontalOptions="Center"
+            x:Name="toolName"/>
+
 
     </VerticalStackLayout>
 </ContentPage>

@@ -32,9 +32,18 @@
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
     <ShellContent
+    Title="Inventory"
+    ContentTemplate="{DataTemplate local:Inventory}"
+    Route="Inventory" />
+    <ShellContent
         Title="Borrow Items"
         ContentTemplate="{DataTemplate local:Borrow}"
         Route="Borrow" />
+
+    <ShellContent
+    Title="temp"
+    ContentTemplate="{DataTemplate local:temp}"
+    Route="temp" />
 
     <Shell.FlyoutFooter>
         <StackLayout>

@@ -2,7 +2,6 @@ using KTI_Testing__Mobile_.Models;
 
 namespace KTI_Testing__Mobile_;
 
-
 public partial class ToolsPage : ContentPage
 {
 	public ToolsPage()
@@ -10,5 +9,9 @@ public partial class ToolsPage : ContentPage
 		InitializeComponent();
 	}
 
-	Tool myTool;
+	public ToolsPage(Tool t)
+	{
+		InitializeComponent();
+		toolName.Text = "This page is for a " + t.Name + "!"; 
+	}
 }
