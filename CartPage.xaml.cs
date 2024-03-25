@@ -15,9 +15,17 @@ namespace MauiApp2
             InitializeComponent();
         }
 
-        public CartPage(Tool t)
+        private void GoCancle_Clicked(object sender, EventArgs e)
         {
-            InitializeComponent();
+            OutputLabel.Text = "are you sure?";
+        }
+        private void GoToSettingPage(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync(nameof(SettingsPage));
+        }
+        private void addItem(Tool tool)
+        {
+            toolList.Add(tool);
 
             var myStyle = new Style<Entry>(
 
@@ -29,13 +37,10 @@ namespace MauiApp2
             (Entry.FontSizeProperty, 28)
             );
 
-        private void GoCancle_Clicked(object sender, EventArgs e)
-        {
+            Button button = new Button { Text = tool.Name, Style = myStyle };
+            button.Clicked += (s, e) => { Navigation.PushAsync(new ToolsPage(tool)); };
+            button.Margin = new Thickness(15, 15, 15, 0);
 
-        }
-        private void GoToSettingPage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(SettingsPage));
         }
     }
 }
