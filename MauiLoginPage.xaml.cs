@@ -4,9 +4,9 @@ namespace MauiApp2;
 
 public partial class MauiLoginPage : ContentPage
 {
-	public MauiLoginPage(LoginPageViewModel loginPageViewModel)
-	{
-		InitializeComponent();
-		this.BindingContext = loginPageViewModel;
-	}
+    public MauiLoginPage(LoginPageViewModel loginPageViewModel)
+    {
+        InitializeComponent();
+        this.BindingContext = loginPageViewModel;
+    }
 }

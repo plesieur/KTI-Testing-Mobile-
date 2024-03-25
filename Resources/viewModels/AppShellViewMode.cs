@@ -1,10 +1,5 @@
 ﻿using MauiApp2;
 using Microsoft.Toolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.Resources.viewModels
 {
@@ -12,9 +7,9 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
     {
         [ICommand]
 
-        async void SignOut() 
+        async void SignOut()
         {
-            if (Preferences.ContainsKey(nameof(App.UserInfo))) 
+            if (Preferences.ContainsKey(nameof(App.UserInfo)))
             {
                 Preferences.Remove(nameof(App.UserInfo));
             }

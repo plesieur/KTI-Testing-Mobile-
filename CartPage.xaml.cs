@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Maui.Markup;
+using KTI_Testing__Mobile_;
+using KTI_Testing__Mobile_.Models;
+using System.Collections;
 
 
 namespace MauiApp2
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
+        List<Tool> toolList = new List<Tool>();
 
         public CartPage()
         {
             InitializeComponent();
+
+            Tool clone2Tool = new Tool(1, "Hammer", "a bangy boi", "hehe", 50);
+
+            for (int i = 0; i < 20; i++)
+            {
+                AddItem(clone2Tool);
+            }
         }
 
         private void GoCancle_Clicked(object sender, EventArgs e)
@@ -23,7 +31,7 @@ namespace MauiApp2
         {
             Shell.Current.GoToAsync(nameof(SettingsPage));
         }
-        private void addItem(Tool tool)
+        private void AddItem(Tool tool)
         {
             toolList.Add(tool);
 

@@ -1,12 +1,5 @@
 ﻿using HtmlAgilityPack;
 using KTI_Testing__Mobile_.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.NewFolder
 {
@@ -46,8 +39,8 @@ namespace KTI_Testing__Mobile_.NewFolder
                 {
                     Console.WriteLine("Errored: " + errors[0]);
                 }
-            }   
-            else 
+            }
+            else
             {
                 return null;
             }
