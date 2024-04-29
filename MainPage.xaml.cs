@@ -1,6 +1,30 @@
-﻿using KTI_Testing__Mobile_;
+﻿using CommunityToolkit.Maui.Markup;
+using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
+/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-android)'
+Before:
 using System.Collections;
+using CommunityToolkit.Maui.Markup;
+After:
+using System.Collections;
+*/
+
+/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-ios)'
+Before:
+using System.Collections;
+using CommunityToolkit.Maui.Markup;
+After:
+using System.Collections;
+*/
+
+/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-maccatalyst)'
+Before:
+using System.Collections;
+using CommunityToolkit.Maui.Markup;
+After:
+using System.Collections;
+*/
+
 
 namespace MauiApp2
 {
@@ -10,14 +34,13 @@ namespace MauiApp2
 
         List<Tool> toolList = new List<Tool>();
 
-        Style MyStyle;
         public MainPage()
         {
             InitializeComponent();
 
-            Tool cloneTool = new Tool(1,"Hammer","a bangy boi","hehe",50);
+            Tool cloneTool = new Tool(1, "Hammer", "a bangy boi", "hehe", 50);
 
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 addItem(cloneTool);
             }
@@ -51,8 +74,20 @@ namespace MauiApp2
         {
             toolList.Add(tool);
 
-            //var button = new Button { Text = tool.Name , StyleClass="items"};
-            //listBox.Children.Add(button);
+            var myStyle = new Style<Entry>(
+
+            (Entry.HeightRequestProperty, 120),
+            (Entry.MaximumWidthRequestProperty, 430),
+            (Entry.ShadowProperty, 10),
+            (Entry.TextColorProperty, Colors.Black),
+            (Entry.BackgroundColorProperty, Colors.WhiteSmoke),
+            (Entry.FontSizeProperty, 28)
+            );
+
+            Button button = new Button { Text = tool.Name, Style = myStyle };
+            button.Clicked += (s, e) => { Navigation.PushAsync(new ToolsPage(tool)); };
+            button.Margin = new Thickness(15, 15, 15, 0);
+            listBox.Children.Add(button);
         }
 
     }

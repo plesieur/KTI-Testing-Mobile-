@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KTI_Testing__Mobile_.Models
+﻿namespace KTI_Testing__Mobile_.Models
 {
-    class Tool(int i, string n, string d, string icon, int a)
+    public class Tool
     {
-        private int id = i;
-        private string name = n;
-        private string description = d;
-        private string icon = icon;
-        private int amount = a;
+        private int id;
+        private string name;
+        private string description;
+        private string icon;
+        private int amount;
+
+
+        public Tool(int i, string n, string d, string icon, int a)
+        {
+            this.id = i;
+            this.name = n;
+            this.description = d;
+            this.icon = icon;
+            this.amount = a;
+        }
 
         public int Id
         {
@@ -25,7 +29,7 @@ namespace KTI_Testing__Mobile_.Models
             get { return name; }
             set { name = value; }
         }
-        public string Description
+        public string Desc
         {
             get { return description; }
             set { description = value; }
@@ -42,8 +46,5 @@ namespace KTI_Testing__Mobile_.Models
             get { return amount; }
             set { amount = value; }
         }
-
-
-
     }
 }

@@ -4,73 +4,29 @@
              x:Class="MauiApp2.CartPage"
              Title="Inventory">
 
-    <Grid RowDefinitions= "100, *, Auto, 70"
-            ColumnDefinitions="0.20*, 0.20*, 0.20*, 0.20*"
+    <Grid RowDefinitions= "100,*, Auto, 70"
+            ColumnDefinitions="0.25*, 0.25*, 0.25*, 0.25*"
             Padding="5"
-            ColumnSpacing="5">
-        <Border 
-            Grid.Row="0"
-            Grid.Column="0">
-            <Label 
-                Text="Hammor" 
-                SemanticProperties.Description="level1" 
-                FontSize="Caption">
-            </Label>
-        </Border>
-        <Image Source="Images/hammor.png" ScaleX="0.5" ScaleY="0.5"/>
-        <Border
-            Grid.Row="0"
-            Grid.Column="1">
-            <Label 
-               Text="Screws" 
-               SemanticProperties.Description="level1" 
-               FontSize="Caption">
-            </Label>
-        </Border>
-        <Image Source="Image/screws.png" Grid.Column="1"/>
-        <Border
-            Grid.Row="0"
-            Grid.Column="2">
-            <Label 
-                Text="Rulers" 
-                SemanticProperties.Description="level1" 
-                FontSize="Caption">
-            </Label>
-        </Border>
-        <Image Source="Image/ruler.png" Grid.Column="2"/>
-        <Border
-            Grid.Row="0"
-            Grid.Column="3">
-            <Label 
-                Text="Washers" 
-                SemanticProperties.Description="level1" 
-                FontSize="Caption">
-            </Label>
-        </Border>
-        <Image Source="Image/washers.png" Grid.Column="3"/>
-        <Border
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="0,10,0,400" >
-            <Label 
-                Text="Gears" 
-                SemanticProperties.Description="level1" 
-                FontSize="Caption">
-            </Label>
-        </Border>
-        <Image Source="Image/gears.png" Grid.Row="1" Margin="0,10,0,400"/>
-        <StackLayout>
-            <Button Text="Comform" Clicked="GoSubmit_Clicked" 
+            ColumnSpacing="5" IsVisible="True">
+
+        <Label Text="" Grid.Column="0" Grid.Row="0"></Label>
+        <Label Text="" Grid.Column="1" Grid.Row="0"></Label>
+
+        <Entry x:Name="Items" Placeholder="0.00" Grid.Column="0" Grid.Row="1"></Entry>
+        <Entry x:Name="Items" Placeholder="0.00" Grid.Column="1" Grid.Row="1"></Entry>
+        <Button 
+            Text="Comform" 
+            Clicked="GoSubmit_Clicked" 
             Grid.Row="2"
             Grid.Column="1"
             AnchorX="5" 
             AnchorY="5" 
             BackgroundColor="#1DC80E" 
             HeightRequest="44" 
-            HorizontalOptions="Center"/>
-            <Label Text="" TextColor="Black" x:Name="OutputLabel"></Label>
-        </StackLayout>
-        
+            HorizontalOptions="Center"
+        />
+        <Label Text="" TextColor="Black" x:Name="OutputText"></Label>
+
         <Button 
             Text="Cancel"
             Clicked="GoCancle_Clicked"
@@ -82,7 +38,8 @@
             HeightRequest="44" 
             HorizontalOptions="Center"
         />
-        
+        <Label Text="" TextColor="Black" x:Name="OutputLabel"></Label>
+
         <Button Text="Profile"
                 Grid.Row="3"
                 Grid.Column="0"
@@ -103,4 +60,5 @@
         />
 
     </Grid>
+
 </ContentPage>
