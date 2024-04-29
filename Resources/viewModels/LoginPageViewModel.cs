@@ -37,11 +37,25 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
                 }
 
                 string userDetails = JsonConvert.SerializeObject(userInfo);
-                Preferences.Set(nameof(App.UserInfo), userDetails);
-                App.UserInfo = userInfo;
+                
+                Preferences.Set("UserInfo", userDetails);
 
-                // This causes error
-                await Shell.Current.GoToAsync("//MainPage");
+                App.UserInfo = userInfo;
+                if (userInfo.Error == null) 
+                {
+                    await Shell.Current.GoToAsync("//MainPage");
+                }
+                else
+                {
+                    // throw error
+                    Console.WriteLine(userInfo.Error);
+                    Preferences.Remove(nameof(App.UserInfo));
+                    await App.Current.MainPage.DisplayAlert("KTI Inventory", userInfo.Error, "Ok");
+                }              
+            }
+            else
+            {
+                Console.WriteLine("EMPTYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
             }
         }
     }

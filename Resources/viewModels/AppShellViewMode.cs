@@ -12,13 +12,13 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
     {
         [ICommand]
 
-        async void SignOut() 
+        async void SignOut()
         {
-            if (Preferences.ContainsKey(nameof(App.UserInfo))) 
+            if (Preferences.ContainsKey("UserInfo")) 
             {
                 Preferences.Remove(nameof(App.UserInfo));
             }
-            await Shell.Current.GoToAsync($"//{nameof(MauiLoginPage)}");
+            await Shell.Current.GoToAsync("//MauiLoginPage");
         }
     }
 }
