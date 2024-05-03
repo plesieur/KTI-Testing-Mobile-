@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
+using MauiApp3.Models;
+using System.Collections.ObjectModel;
 /* Unmerged change from project 'KTI Testing (Mobile) (net8.0-android)'
 Before:
 using System.Collections;
@@ -26,7 +28,7 @@ using System.Collections;
 */
 
 
-namespace MauiApp2
+namespace MauiApp3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
@@ -37,6 +39,10 @@ namespace MauiApp2
         public MainPage()
         {
             InitializeComponent();
+
+            List<Tools> tools = ToolRepository.GetTools();
+
+            toolList.ItemsSource = tools;
 
             Tool cloneTool = new Tool(1, "Hammer", "a bangy boi", "hehe", 50);
 
@@ -89,6 +95,32 @@ namespace MauiApp2
             button.Margin = new Thickness(15, 15, 15, 0);
             listBox.Children.Add(button);
         }
+
+        private async void toolList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+{
+    if (toolList.SelectedItem != null)
+    {
+        await Shell.Current.GoToAsync($"{nameof(CartPage)}?Id={((Tools)toolList.SelectedItem).toolId}");
+    }
+
+
+}
+
+private void toolList_ItemTapped(object sender, ItemTappedEventArgs e)
+{
+    toolList.SelectedItem = null;
+}
+
+private void loadTools()
+{
+    var tools = new ObservableCollection<Tools>(ToolRepository.GetTools());
+    toolList.ItemsSource = tools;
+}
+private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+{
+    var tools = new ObservableCollection<Tools>(ToolRepository.SearchTools(((SearchBar)sender).Text));
+    toolList.ItemsSource = tools;
+}
 
     }
 
