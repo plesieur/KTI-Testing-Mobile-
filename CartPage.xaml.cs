@@ -17,7 +17,7 @@ namespace MauiApp2
         {
             OutputLabel.Text = "are you sure?";
         }
-        private void Gosubmit_Clicked(object sender, EventArgs e)
+        private void GoSubmit_Clicked(object sender, EventArgs e)
         {
             OutputLabel.Text = "are you sure?";
         }

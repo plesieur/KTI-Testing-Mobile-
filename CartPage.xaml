@@ -13,7 +13,7 @@
         <Label Text="" Grid.Column="1" Grid.Row="0"></Label>
 
         <Entry x:Name="Items" Placeholder="0.00" Grid.Column="0" Grid.Row="1"></Entry>
-        <Entry x:Name="Items" Placeholder="0.00" Grid.Column="1" Grid.Row="1"></Entry>
+        <Entry x:Name="Items2" Placeholder="0.00" Grid.Column="1" Grid.Row="1"></Entry>
         <Button 
             Text="Comform" 
             Clicked="GoSubmit_Clicked" 
@@ -39,25 +39,6 @@
             HorizontalOptions="Center"
         />
         <Label Text="" TextColor="Black" x:Name="OutputLabel"></Label>
-
-        <Button Text="Profile"
-                Grid.Row="3"
-                Grid.Column="0"
-                Clicked="GoToProfilePage"
-
-        />
-
-        <Button Text="History"
-                Grid.Row="3"
-                Grid.Column="1"
-                Clicked="GoToHistoryPage"
-        />
-
-        <Button Text="Settings"
-                Grid.Row="3"
-                Grid.Column="2"
-                Clicked="GoToSettingPage"
-        />
 
     </Grid>
 
