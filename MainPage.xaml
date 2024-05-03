@@ -1,14 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp2.MainPage">
+             BackgroundColor="LightBlue"
+             x:Class="MauiApp3.MainPage">
 
-    <ScrollView>
-        <StackLayout x:Name="listBox" StyleClass="body">
-            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Hammer" x:Name="Hammer"></Button>
-            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Nails"></Button>
-            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Screwdrivers"></Button>
-            <Button StyleClass="Items" Clicked="TakeMeAway" Text="Cats"></Button>
-        </StackLayout>
-    </ScrollView>
+    <Grid
+    Padding="5"
+    RowDefinitions="50, *, 100"
+    ColumnDefinitions="*"
+    >
+        <SearchBar
+        Grid.Row="0"
+        Grid.Column="0"
+        Placeholder="Search Tool"
+        TextChanged="SearchBar_TextChanged"
+        ></SearchBar>
+        <ListView 
+        Grid.Row="1"
+        Grid.Column="0"
+        x:Name="toolList" 
+        BackgroundColor="White"
+        SeparatorColor="Grey"
+        RowHeight="65"
+        ItemSelected="toolList_ItemSelected"
+        ItemTapped="toolList_ItemTapped"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                          Detail="{Binding Quantities}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Borrowed Items"
+            FontAttributes="Bold"
+            FontSize="Header"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+    </Grid>
+
 </ContentPage>
