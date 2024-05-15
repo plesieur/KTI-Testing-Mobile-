@@ -3,8 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.Inventory"
              Title="Inventory">
-    <ScrollView>
-        <FlexLayout Wrap="Wrap" JustifyContent="Center" x:Name="Bag" BackgroundColor="#046BCC">
-        </FlexLayout>
-    </ScrollView>
+
+
+    <VerticalStackLayout>
+        <Button
+            Text="Add"
+            Command="{Binding addToolCommand}"/>
+        
+        <CollectionView ItemsSource="{Binding Tools}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="Orange" Margin="10" HorizontalOptions="Center">
+                            <Label Text="{Binding AddedTool.Name}" TextColor="Red" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+        
 </ContentPage>

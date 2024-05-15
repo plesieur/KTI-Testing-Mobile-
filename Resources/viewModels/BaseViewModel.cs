@@ -13,5 +13,7 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
         public bool _isBusy;
         [ObservableProperty]
         public string _title;
+
+        
     }
 }

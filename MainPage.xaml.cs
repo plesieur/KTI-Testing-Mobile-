@@ -42,27 +42,20 @@ namespace MauiApp2
             Shell.Current.GoToAsync(nameof(SettingsPage));
         }
 
-        private async void TakeMeAway(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ToolsPage());
-        }
-
         private void addItem(Tool tool)
         {
             toolList.Add(tool);
 
-            var myStyle = new Style<Entry>(
+            var myStyle = new Style<Button>(
 
-            (Entry.HeightRequestProperty, 120),
-            (Entry.MaximumWidthRequestProperty, 430),
-            (Entry.ShadowProperty, 10),
-            (Entry.TextColorProperty, Colors.Black),
-            (Entry.BackgroundColorProperty, Colors.WhiteSmoke),
-            (Entry.FontSizeProperty, 28)
+            (Button.HeightRequestProperty, 120),
+            (Button.MaximumWidthRequestProperty, 430),
+            (Button.TextColorProperty, Colors.Black),
+            (Button.BackgroundColorProperty, Colors.WhiteSmoke),
+            (Button.FontSizeProperty, 28)
             );
 
-            Button button = new Button {Text = tool.Name, Style = myStyle};
-            button.Clicked += (s, e) => { Navigation.PushAsync(new ToolsPage(tool));};
+            Button button = new Button {Text = tool.name, Style = myStyle};
             button.Margin = new Thickness(15, 15, 15, 0);
             listBox.Children.Add(button);
         }

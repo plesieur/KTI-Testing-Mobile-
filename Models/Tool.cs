@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,11 +12,12 @@ namespace KTI_Testing__Mobile_.Models
     public class Tool
     {
         private int id;
-        private string name;
+
+        private string Name = "";
+
         private string description;
         private string icon;
         private int amount;
-
 
         public Tool(int i, string n, string d, string icon, int a)
         {
@@ -30,10 +34,10 @@ namespace KTI_Testing__Mobile_.Models
             set { id = value; }
         }
 
-        public string Name
+        public string name
         {
-            get { return name; }
-            set { name = value; }
+            get { return Name; }
+            set { Name = value; }
         }
         public string Desc
         {

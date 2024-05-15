@@ -22,6 +22,8 @@ namespace MauiApp2
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MauiLoginPage>();
             builder.Services.AddSingleton<LoginPageViewModel>();
+            builder.Services.AddSingleton<CartPage>();
+            builder.Services.AddSingleton<cartModel>();
             builder.UseMauiCameraView();
             builder.UseMauiApp<App>().UseMauiCommunityToolkitMarkup();
             return builder.Build();

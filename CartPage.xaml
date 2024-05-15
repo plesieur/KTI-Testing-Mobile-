@@ -1,10 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:KTI_Testing__Mobile_.Resources.viewModels"
+             x:DataType="viewmodel:cartModel"
              x:Class="MauiApp2.CartPage"
              Title="Inventory">
 
-    <VerticalStackLayout StyleClass="body" x:Name="Cart">
-        
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout StyleClass="body" x:Name="Cart">
+            <Label Text="BANANA MAN HAS BEEN HERE"></Label>
+            <Button Text="Add"
+                    Command="{Binding AddToCartCommand}"
+                />
+
+            <ListView x:Name="list" ItemsSource="{Binding CartList}" MinimumHeightRequest="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding CartList.Count}" x:DataType="{x:Null}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
 </ContentPage>
