@@ -27,7 +27,7 @@ public partial class temp : ContentPage
         (Entry.FontSizeProperty, 28)
         );
 
-        Button button = new Button { Text = t.name, Style = myStyle };
+        Button button = new Button { Text = t.Name, Style = myStyle };
         button.Margin = new Thickness(15, 15, 15, 0);
 
         Cart.Children.Add(button);

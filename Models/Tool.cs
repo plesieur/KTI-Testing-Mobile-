@@ -13,18 +13,17 @@ namespace KTI_Testing__Mobile_.Models
     {
         private int id;
 
-        private string Name = "";
+        private string name = "";
 
         private string description;
         private string icon;
         private int amount;
 
-        public Tool(int i, string n, string d, string icon, int a)
+        public Tool(int i, string n, string d, int a)
         {
             this.id = i;
             this.name = n;
             this.description = d;
-            this.icon = icon;
             this.amount = a;
         }
 
@@ -34,7 +33,7 @@ namespace KTI_Testing__Mobile_.Models
             set { id = value; }
         }
 
-        public string name
+        public string Name
         {
             get { return Name; }
             set { Name = value; }

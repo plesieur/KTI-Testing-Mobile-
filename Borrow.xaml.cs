@@ -44,9 +44,9 @@ public partial class Borrow : ContentPage
 
             await cameraView.StopCameraAsync();
 
-            ScannedTool = new Tool(500, "kitty", "pooh","haha", 100);
-            barcodeResult.Text = ScannedTool.name;
-            Confirm.Text = "Are you sure you want to check out a\n" + ScannedTool.name + "?";
+            ScannedTool = new Tool(500, "kitty", "pooh", 100);
+            barcodeResult.Text = ScannedTool.Name;
+            Confirm.Text = "Are you sure you want to check out a\n" + ScannedTool.Name + "?";
             Confirm.IsVisible = true;
             //Navigation.PushAsync(new CartPage(myTool));
         });

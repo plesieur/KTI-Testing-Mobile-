@@ -15,7 +15,7 @@ namespace MauiApp2
         {
             InitializeComponent();
 
-            Tool cloneTool = new Tool(1,"Hammer","a bangy boi","hehe",50);
+            Tool cloneTool = new Tool(1,"Hammer","a bangy boi",50);
 
             for(int i = 0; i < 20; i++)
             {
@@ -55,7 +55,7 @@ namespace MauiApp2
             (Button.FontSizeProperty, 28)
             );
 
-            Button button = new Button {Text = tool.name, Style = myStyle};
+            Button button = new Button {Text = tool.Name, Style = myStyle};
             button.Margin = new Thickness(15, 15, 15, 0);
             listBox.Children.Add(button);
         }
