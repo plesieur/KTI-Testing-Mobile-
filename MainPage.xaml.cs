@@ -97,14 +97,14 @@ namespace MauiApp3
         }
 
         private async void toolList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-{
-    if (toolList.SelectedItem != null)
-    {
-        await Shell.Current.GoToAsync($"{nameof(CartPage)}?Id={((Tools)toolList.SelectedItem).toolId}");
-    }
+        {
+            if (toolList.SelectedItem != null)
+                {
+                    await Shell.Current.GoToAsync($"{nameof(CartPage)}?Id={((Tools)toolList.SelectedItem).toolId}");
+                }
 
 
-}
+        }
 
 private void toolList_ItemTapped(object sender, ItemTappedEventArgs e)
 {
