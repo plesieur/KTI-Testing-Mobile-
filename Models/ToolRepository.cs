@@ -9,8 +9,8 @@ namespace MauiApp3.Models
 {
     public static class ToolRepository
     {
-        public static List<Tool> _tools = new List<Tool>() {
-
+        public static List<Tool> _tools = new List<Tool>() { 
+        
             new(000001, "Hammer", "", 7),
             new(00002, "Handsaw", "", 7),
             new(00003, "Screwdriver", "", 7),
@@ -29,8 +29,7 @@ namespace MauiApp3.Models
             if (tools == null || _tools.Count <= 0)
             {
                 tools = _tools.Where(x => !string.IsNullOrWhiteSpace(x.Amount.ToString()) && x.Amount.ToString().StartsWith(filterText, StringComparison.OrdinalIgnoreCase))?.ToList();
-            }
-            else
+            } else
             {
                 return tools;
             }
