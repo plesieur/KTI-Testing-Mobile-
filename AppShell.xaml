@@ -7,15 +7,19 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiApp2"
     BackgroundColor="Orange"
+    x:Name="MyAppShell"
      >
-   
-    <ShellContent
-     Title="Login"
-      Shell.FlyoutBehavior="Disabled"
-     ContentTemplate="{DataTemplate local:MauiLoginPage}"
-     Route="MainPage" />
     
     <ShellContent
+        x:Name="MyLoginPage"
+    Title="Login"
+         Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:MauiLoginPage}"
+        Route="MauiLoginPage"
+        />
+
+    <ShellContent
+        x:Name="MyMainPage"
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
@@ -31,10 +35,23 @@
         Title="cart"
         ContentTemplate="{DataTemplate local:CartPage}"
         Route="CartPage" />
+    <ShellContent
+    Title="Inventory"
+    ContentTemplate="{DataTemplate local:Inventory}"
+    Route="Inventory" />
+    <ShellContent
+        Title="Borrow Items"
+        ContentTemplate="{DataTemplate local:Borrow}"
+        Route="Borrow" />
+
+    <ShellContent
+    Title="temp"
+    ContentTemplate="{DataTemplate local:temp}"
+    Route="temp" />
 
     <Shell.FlyoutFooter>
         <StackLayout>
-            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
+            <Button Text="Sign Out" Command ="{Binding SignOutCommand}" BackgroundColor="Orange"></Button>
         </StackLayout>
     </Shell.FlyoutFooter>
 

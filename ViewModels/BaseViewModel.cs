@@ -1,6 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 
-namespace KTI_Testing__Mobile_.Resources.viewModels
+namespace KTI_Testing__Mobile_.ViewModels
 {
     public partial class BaseViewModel : ObservableObject
     {
@@ -8,7 +8,5 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
         public bool _isBusy;
         [ObservableProperty]
         public string _title;
-
-        
     }
 }

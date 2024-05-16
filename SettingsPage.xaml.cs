@@ -2,10 +2,10 @@ namespace MauiApp2;
 
 public partial class SettingsPage : ContentPage
 {
-	public SettingsPage()
-	{
-		InitializeComponent();
-	}
+    public SettingsPage()
+    {
+        InitializeComponent();
+    }
     private void GoToProfilePage(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(ProfilePage));

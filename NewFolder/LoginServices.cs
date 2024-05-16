@@ -1,10 +1,5 @@
-﻿using KTI_Testing__Mobile_.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HtmlAgilityPack;
+using KTI_Testing__Mobile_.Models;
 
 namespace KTI_Testing__Mobile_.NewFolder
 {
@@ -12,32 +7,66 @@ namespace KTI_Testing__Mobile_.NewFolder
     {
         public async Task<UserInfo> Login(string username, string password)
         {
-                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+            if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+            {
+                var userinfo = new UserInfo();
+
+                using var client = new HttpClient();
+                Uri uri = new Uri("http://10.0.2.2:3000/login");
+                var formContent = new FormUrlEncodedContent(new[]
                 {
-                    var userinfo = new UserInfo();
-                    var client = new HttpClient();
+                    new KeyValuePair<string, string>("email", username),
+                    new KeyValuePair<string, string>("password", password),
+                    new KeyValuePair<string, string>("mobile", "antonia"),
+                });
 
-                    string url = "http://temp2" + username + "/" + password;
+                var myHttpClient = new HttpClient();
+                var response = await myHttpClient.PostAsync(uri.ToString(), formContent);
+                var stringContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(stringContent);
 
-                    client.BaseAddress = new Uri(url);
+                HtmlDocument htmlSnippet = new HtmlDocument();
+                htmlSnippet.LoadHtml(stringContent);
 
-                    HttpResponseMessage reponse = await client.GetAsync("");
-
-                    if (reponse.IsSuccessStatusCode)
+                List<string> errors = new List<string>();
+                HtmlNodeCollection nodelist = htmlSnippet.DocumentNode.SelectNodes("//error");
+                if(nodelist != null)
+                {
+                    foreach (HtmlNode link in htmlSnippet.DocumentNode.SelectNodes("//error"))
                     {
-                        userinfo = await reponse.Content.ReadFromJsonAsync<UserInfo>();
-                        return await Task.FromResult(userinfo);
-                    }
-                    else
-                    {
-                        return null;
+                        string att = link.InnerHtml;
+                        errors.Add(att.Trim());
                     }
                 }
-                else 
+
+                HtmlNode userelement = htmlSnippet.DocumentNode.SelectSingleNode("//userinfo");
+                string userid = "";
+                if(userelement != null)
                 {
-                    return null;
+                    userid = userelement.InnerHtml;
                 }
-            
+                
+                Console.WriteLine(errors.ToString());
+                if (errors.Count == 0)
+                {
+                    string[] info = userid.Split(',');
+                    userinfo.UserId = (info[0].Trim()); // id
+                    userinfo.Name = (info[1].Trim()); // name
+                    userinfo.Email = (info[2].Trim()); // email
+                }
+                else if (errors[1] == "400")
+                {
+                    Console.WriteLine("Errored: " + errors[0]);
+                    userinfo.Error = errors[0];
+                }
+                
+                return userinfo;
+            }   
+            else 
+            {
+                return null;
+            }
+            return null;
         }
     }
 }

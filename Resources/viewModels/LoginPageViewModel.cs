@@ -5,12 +5,6 @@ using MauiApp2;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.Resources.viewModels
 {
@@ -26,25 +20,37 @@ namespace KTI_Testing__Mobile_.Resources.viewModels
 
         [ICommand]
 
-        public async void Login() 
+        public async void Login()
         {
-            if(!string.IsNullOrEmpty(UserName)&& !string.IsNullOrWhiteSpace(Password))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrWhiteSpace(Password))
             {
                 UserInfo userInfo = await loginRepos.Login(UserName, Password);
 
-                if (Preferences.ContainsKey(nameof(App.UserInfo))) 
+                if (Preferences.ContainsKey(nameof(App.UserInfo)))
                 {
                     Preferences.Remove(nameof(App.UserInfo));
                 }
 
                 string userDetails = JsonConvert.SerializeObject(userInfo);
-                Preferences.Set(nameof(App.UserInfo), userDetails);
+                
+                Preferences.Set("UserInfo", userDetails);
+
                 App.UserInfo = userInfo;
-
-                AppShell.Current.FlyoutHeader = new NewContent1();
-
-
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                if (userInfo.Error == null) 
+                {
+                    await Shell.Current.GoToAsync("//MainPage");
+                }
+                else
+                {
+                    // throw error
+                    Console.WriteLine(userInfo.Error);
+                    Preferences.Remove(nameof(App.UserInfo));
+                    await App.Current.MainPage.DisplayAlert("KTI Inventory", userInfo.Error, "Ok");
+                }              
+            }
+            else
+            {
+                Console.WriteLine("EMPTYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
             }
         }
     }

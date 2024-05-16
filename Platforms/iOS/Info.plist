@@ -16,8 +16,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -34,6 +32,6 @@
 		<dict/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app wants to know ur SSN. pls yell it out loudly</string>
+	<string>we kinda need ur camera for stuff</string>
 </dict>
 </plist>
