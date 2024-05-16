@@ -1,12 +1,5 @@
 ﻿using HtmlAgilityPack;
 using KTI_Testing__Mobile_.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KTI_Testing__Mobile_.NewFolder
 {
@@ -24,6 +17,7 @@ namespace KTI_Testing__Mobile_.NewFolder
                 {
                     new KeyValuePair<string, string>("email", username),
                     new KeyValuePair<string, string>("password", password),
+                    new KeyValuePair<string, string>("mobile", "antonia"),
                 });
 
                 var myHttpClient = new HttpClient();
@@ -35,17 +29,38 @@ namespace KTI_Testing__Mobile_.NewFolder
                 htmlSnippet.LoadHtml(stringContent);
 
                 List<string> errors = new List<string>();
-
-                foreach (HtmlNode link in htmlSnippet.DocumentNode.SelectNodes("//error"))
+                HtmlNodeCollection nodelist = htmlSnippet.DocumentNode.SelectNodes("//error");
+                if(nodelist != null)
                 {
-                    string att = link.InnerHtml;
-                    errors.Add(att.Trim());
+                    foreach (HtmlNode link in htmlSnippet.DocumentNode.SelectNodes("//error"))
+                    {
+                        string att = link.InnerHtml;
+                        errors.Add(att.Trim());
+                    }
                 }
 
-                if (errors[1] == "400")
+                HtmlNode userelement = htmlSnippet.DocumentNode.SelectSingleNode("//userinfo");
+                string userid = "";
+                if(userelement != null)
+                {
+                    userid = userelement.InnerHtml;
+                }
+                
+                Console.WriteLine(errors.ToString());
+                if (errors.Count == 0)
+                {
+                    string[] info = userid.Split(',');
+                    userinfo.UserId = (info[0].Trim()); // id
+                    userinfo.Name = (info[1].Trim()); // name
+                    userinfo.Email = (info[2].Trim()); // email
+                }
+                else if (errors[1] == "400")
                 {
                     Console.WriteLine("Errored: " + errors[0]);
+                    userinfo.Error = errors[0];
                 }
+                
+                return userinfo;
             }   
             else 
             {

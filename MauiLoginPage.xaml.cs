@@ -8,5 +8,7 @@ public partial class MauiLoginPage : ContentPage
 	{
 		InitializeComponent();
 		this.BindingContext = loginPageViewModel;
+		
 	}
+	
 }

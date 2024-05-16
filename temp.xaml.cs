@@ -1,17 +1,16 @@
 namespace MauiApp2;
 
 using CommunityToolkit.Maui.Markup;
-using CommunityToolkit.Mvvm.ComponentModel;
 using KTI_Testing__Mobile_.Models;
 
 [QueryProperty("addedTool", "addedTool")]
 public partial class temp : ContentPage
 {
     Tool addedTool;
-	public temp()
-	{
-		InitializeComponent();
-	}
+    public temp()
+    {
+        InitializeComponent();
+    }
 
     public temp(Tool t)
     {

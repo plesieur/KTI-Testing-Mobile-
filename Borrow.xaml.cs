@@ -38,7 +38,7 @@ public partial class Borrow : ContentPage
 
     private void cameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs args)
     {
-        MainThread.BeginInvokeOnMainThread(async() =>
+        MainThread.BeginInvokeOnMainThread(async () =>
         {
             //barcodeResult.Text = $"{args.Result[0].BarcodeFormat}: {args.Result[0].Text}";
 
