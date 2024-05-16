@@ -40,7 +40,7 @@ namespace MauiApp3
         {
             InitializeComponent();
 
-            List<Tools> tools = ToolRepository.GetTools();
+            List<Tool> tools = ToolRepository.GetTools();
 
             toolList.ItemsSource = tools;
 
@@ -85,7 +85,6 @@ namespace MauiApp3
             );
 
             Button button = new Button { Text = tool.Name, Style = myStyle };
-            button.Clicked += (s, e) => { Navigation.PushAsync(new ToolsPage(tool)); };
             button.Margin = new Thickness(15, 15, 15, 0);
             listBox.Children.Add(button);
         }

@@ -49,4 +49,5 @@ public partial class Inventory : ContentPage
 
         var myStyle = new Style<Entry>(
 
+    }
 }
