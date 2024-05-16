@@ -1,7 +1,7 @@
 ﻿using Camera.MAUI;
 using CommunityToolkit.Maui.Markup;
 using KTI_Testing__Mobile_.Resources.viewModels;
-using MauiApp3;
+using MauiApp2;
 using Microsoft.Extensions.Logging;
 
 namespace MauiApp2

@@ -35,8 +35,8 @@ namespace KTI_Testing__Mobile_.Models
 
         public string Name
         {
-            get { return Name; }
-            set { Name = value; }
+            get { return name; }
+            set { name = value; }
         }
         public string Desc
         {

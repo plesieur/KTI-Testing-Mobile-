@@ -2,34 +2,10 @@
 using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
 using MauiApp2;
-using MauiApp3.Models;
+using MauiApp2.Models;
 using System.Collections.ObjectModel;
-/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-android)'
-Before:
-using System.Collections;
-using CommunityToolkit.Maui.Markup;
-After:
-using System.Collections;
-*/
 
-/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-ios)'
-Before:
-using System.Collections;
-using CommunityToolkit.Maui.Markup;
-After:
-using System.Collections;
-*/
-
-/* Unmerged change from project 'KTI Testing (Mobile) (net8.0-maccatalyst)'
-Before:
-using System.Collections;
-using CommunityToolkit.Maui.Markup;
-After:
-using System.Collections;
-*/
-
-
-namespace MauiApp3
+namespace MauiApp2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
