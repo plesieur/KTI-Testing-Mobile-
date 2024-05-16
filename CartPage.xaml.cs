@@ -14,11 +14,11 @@ namespace MauiApp2
 
         private void GoCancle_Clicked(object sender, EventArgs e)
         {
-            OutputLabel.Text = "are you sure?";
+            //OutputLabel.Text = "are you sure?";
         }
         private void GoSubmit_Clicked(object sender, EventArgs e)
         {
-            OutputLabel.Text = "are you sure?";
+            //OutputLabel.Text = "are you sure?";
         }
         private void GoToSettingPage(object sender, EventArgs e)
         {

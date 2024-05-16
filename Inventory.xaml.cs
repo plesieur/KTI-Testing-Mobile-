@@ -37,17 +37,9 @@ public partial class Inventory : ContentPage
 
         for (int i = 0; i < 20; i++)
         {
-            addItem(new Tool(50, "kitty", "a cat", "icons", 500));
+            //addItem(new Tool(50, "kitty", "a cat", "icons", 500));
         }
     }
 
-    List<Tool> toolList = new List<Tool>();
-
-    private void addItem(Tool tool)
-    {
-        toolList.Add(tool);
-
-        var myStyle = new Style<Entry>(
-
-    }
+    
 }

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Models;
+using MauiApp2;
 using MauiApp3.Models;
 using System.Collections.ObjectModel;
 /* Unmerged change from project 'KTI Testing (Mobile) (net8.0-android)'
@@ -34,7 +35,7 @@ namespace MauiApp3
     public partial class MainPage : ContentPage
     {
 
-        List<Tool> toolList = new List<Tool>();
+        private static List<Tool> toollist = new List<Tool>();
 
         public MainPage()
         {
@@ -42,38 +43,17 @@ namespace MauiApp3
 
             List<Tool> tools = ToolRepository.GetTools();
 
-            toolList.ItemsSource = tools;
-
-            Tool cloneTool = new Tool(1, "Hammer", "a bangy boi", "hehe", 50);
+            Tool cloneTool = new Tool(1, "Hammer", "a bangy boi", 50);
 
             for (int i = 0; i < 20; i++)
             {
                 addItem(cloneTool);
             }
         }
-        private void GoToProfilePage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(ProfilePage));
-        }
 
-        private void GoToHistoryPage(object sender, EventArgs e)
+        public void addItem(Tool tool)
         {
-            Shell.Current.GoToAsync(nameof(HistoryPage));
-        }
-
-        private void GoToCartPage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(CartPage));
-        }
-
-        private void GoToSettingPage(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync(nameof(SettingsPage));
-        }
-
-        private void addItem(Tool tool)
-        {
-            toolList.Add(tool);
+            toollist.Add(tool);
 
             var myStyle = new Style<Button>(
 
@@ -92,29 +72,28 @@ namespace MauiApp3
         private async void toolList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (toolList.SelectedItem != null)
-                {
-                    await Shell.Current.GoToAsync($"{nameof(CartPage)}?Id={((Tools)toolList.SelectedItem).toolId}");
-                }
+            {
+                await Shell.Current.GoToAsync($"{nameof(CartPage)}?Id={((Tools)toolList.SelectedItem).toolId}");
+            }
 
 
         }
 
-private void toolList_ItemTapped(object sender, ItemTappedEventArgs e)
-{
-    toolList.SelectedItem = null;
-}
+        private void toolList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            toolList.SelectedItem = null;
+        }
 
-private void loadTools()
-{
-    var tools = new ObservableCollection<Tools>(ToolRepository.GetTools());
-    toolList.ItemsSource = tools;
-}
-private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
-{
-    var tools = new ObservableCollection<Tools>(ToolRepository.SearchTools(((SearchBar)sender).Text));
-    toolList.ItemsSource = tools;
-}
-
+        private void loadTools()
+        {
+            var tools = new ObservableCollection<Tool>(ToolRepository.GetTools());
+            toolList.ItemsSource = tools;
+        }
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var tools = new ObservableCollection<Tool>(ToolRepository.SearchTools(((SearchBar)sender).Text));
+            toolList.ItemsSource = tools;
+        }
     }
     //test
 }

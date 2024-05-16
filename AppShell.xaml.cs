@@ -1,5 +1,6 @@
 using KTI_Testing__Mobile_;
 using KTI_Testing__Mobile_.Resources.viewModels;
+using MauiApp3;
 
 namespace MauiApp2
 {

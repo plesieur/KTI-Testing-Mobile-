@@ -42,14 +42,14 @@
             FontSize="Header"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
-    </Grid>
 
-    <ScrollView>
-        <StackLayout x:Name="listBox" StyleClass="body">
-            <Button StyleClass="Items" Text="Hammer" x:Name="Hammer"></Button>
-            <Button StyleClass="Items" Text="Nails"></Button>
-            <Button StyleClass="Items" Text="Screwdrivers"></Button>
-            <Button StyleClass="Items" Text="Cats"></Button>
-        </StackLayout>
-    </ScrollView>
+        <ScrollView>
+            <StackLayout x:Name="listBox" StyleClass="body">
+                <Button StyleClass="Items" Text="Hammer" x:Name="Hammer"></Button>
+                <Button StyleClass="Items" Text="Nails"></Button>
+                <Button StyleClass="Items" Text="Screwdrivers"></Button>
+                <Button StyleClass="Items" Text="Cats"></Button>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
